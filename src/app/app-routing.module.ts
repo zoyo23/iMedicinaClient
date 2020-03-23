@@ -4,6 +4,7 @@ import { CriarClienteComponent } from './views/Clientes/criar-cliente/criar-clie
 import { ListarClientesComponent } from './views/Clientes/listar-clientes/listar-clientes.component';
 import { CriarSalaComponent } from './views/Salas/criar-sala/criar-sala.component';
 import { ListarSalasComponent } from './views/Salas/listar-salas/listar-salas.component';
+import { TeleconferenciaComponent } from './views/Salas/teleconferencia/teleconferencia.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'listaClientes', component: ListarClientesComponent },
   { path: 'novaSala', component: CriarSalaComponent },
   { path: 'listaSalas', component: ListarSalasComponent },
+  { path: 'teleconferencia', component: TeleconferenciaComponent },
 ];
 
 @NgModule({

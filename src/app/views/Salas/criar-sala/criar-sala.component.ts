@@ -26,7 +26,11 @@ export class CriarSalaComponent implements OnInit {
     var modeloSala = new Sala(
       this.salaConferenciaForm.value.idCliente,
       this.salaConferenciaForm.value.idMedico,
-      this.salaConferenciaForm.value.dataConsulta
+      this.salaConferenciaForm.value.dataConsulta,
+      '',
+      '',
+      '',
+      ''
     );
 
     const headers = new HttpHeaders();

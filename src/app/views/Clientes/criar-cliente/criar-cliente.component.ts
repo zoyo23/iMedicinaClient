@@ -24,8 +24,9 @@ export class CriarClienteComponent implements OnInit {
   onSubmit() {
 
     var modeloCliente = new Cliente(
+      '',
       this.clienteForm.value.cpfCliente,
-      this.clienteForm.value.nomeCliente
+      this.clienteForm.value.nomeCliente,
     )
 
     const headers = new HttpHeaders();
