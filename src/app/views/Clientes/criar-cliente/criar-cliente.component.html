@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Novo Cliente</h1>
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Nome do Cliente</label>
+            <input type="text" formControlName="nomeCliente" class="form-control" id="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">Cpf do Cliente</label>
+            <input type="text" formControlName="cpfCliente" class="form-control" id="cpf">
+        </div>
+
+        <button type="submit" class="btn btn-success">Gravar</button>
+
+    </form>
+</div>

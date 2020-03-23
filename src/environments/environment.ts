@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url_base_video : 'meet.jit.si'
+  url_base_video_conferencia: 'meet.jit.si',
+  url_base_api: 'http://localhost:5000',
 };
 
 /*

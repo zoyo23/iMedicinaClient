@@ -1,4 +1,7 @@
 export class Cliente {
-    public Cpf: string;
-    public Nome: string;
+
+    public constructor(
+        public Cpf: string,
+        public Nome: string
+    ) { }
 }
