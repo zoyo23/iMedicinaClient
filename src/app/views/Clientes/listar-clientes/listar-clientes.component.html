@@ -2,3 +2,8 @@
 
 
 <a href="novoCliente">Criar Novo Cliente</a>
+
+
+<li *ngFor="let cliente of listaClientes; index as i; first as isFirst">
+    <b> Posição:</b> {{i}} <b>Id:</b> {{cliente.id}} <b>CPF:</b> {{cliente.cpf}} <b>Nome:</b> {{cliente.nome}}
+</li>
