@@ -16,13 +16,20 @@ export class ListarClientesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpClient.get(`${environment.url_base_api}/api/Clientes`)
+    this.httpClient.get<Cliente[]>(`${environment.url_base_api}/api/Clientes`)
       .subscribe(t => {
         this.listaClientes = t;
 
         console.log(this.listaClientes);
       });
 
+  }
+
+  removerCliente(clienteId) {
+    this.httpClient.delete<Cliente[]>(`${environment.url_base_api}/api/Clientes/${clienteId}`)
+      .subscribe(t => {
+        console.log(t);
+      });
   }
 
 }

@@ -1,15 +1,32 @@
-<p>listar-salas works!</p>
+<button [routerLink]="['/novaSala']">Criar Nova Sala</button>
 
 
-<a href="novaSala">Criar Nova Sala</a>
-
-<div *ngIf="carregado | async">
-
-    <li *ngFor="let sala of listaSalas; index as i; first as isFirst">
-        <b> Posição:</b> {{i}} <b>IdCliente:</b> {{sala.idCliente}} <b>IdMedico:</b> {{sala.idMedico}}
-        <b>DataConsulta:</b>
-        {{sala.dataConsulta}} <b>Id:</b> {{sala.id}} <b>ChaveSalaCliente:</b> {{sala.chaveSalaCliente}}
-        <b>ChaveSalaMedico:</b> {{sala.chaveSalaMedico}} <b>IdentificadorSala:</b> {{sala.identificadorSala}}
-        <button [routerLink]="['/teleconferencia', sala.identificadorSala]">Entrar na Sala</button>
-    </li>
-</div>
+<br>
+<table class="table table-striped ">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID CLIENTE</th>
+            <th scope="col">ID MÉDICO</th>
+            <th scope="col">DATA CONSULTA</th>
+            <th scope="col">ID CONSULTA</th>
+            <th scope="col">CHAVE DA SALA CLIENTE</th>
+            <th scope="col">CHAVE DA SALA MÉDICO</th>
+            <th scope="col">ID SALA</th>
+            <th scope="col">AÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sala of listaSalas; index as i">
+            <th scope="row">{{ i }}</th>
+            <td>{{ sala.idCliente }}</td>
+            <td>{{ sala.idMedico }}</td>
+            <td>{{ sala.dataConsulta }}</td>
+            <td>{{ sala.id }}</td>
+            <td>{{ sala.chaveSalaCliente }}</td>
+            <td>{{ sala.chaveSalaMedico }}</td>
+            <td>{{ sala.identificadorSala }}</td>
+            <button [routerLink]="['/teleconferencia', sala.identificadorSala]">Entrar na Sala</button>
+        </tr>
+    </tbody>
+</table>

@@ -12,17 +12,13 @@ import { Observable } from 'rxjs';
 export class ListarSalasComponent implements OnInit {
 
   public listaSalas: Sala[];
-  public carregado: Observable<boolean>;
 
   constructor(private httpClient: HttpClient) { }
 
-
   ngOnInit(): void {
-    this.httpClient.get(`${environment.url_base_api}/api/Salas`)
+    this.httpClient.get<Sala[]>(`${environment.url_base_api}/api/Salas`)
       .subscribe(t => {
         this.listaSalas = t;
-
-        this.carregado = Promise.resolve(true);
       });
   }
 

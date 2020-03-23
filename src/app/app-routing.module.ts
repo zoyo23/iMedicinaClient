@@ -8,6 +8,7 @@ import { TeleconferenciaComponent } from './views/Salas/teleconferencia/teleconf
 
 
 const routes: Routes = [
+  { path: '', component: ListarSalasComponent },
   { path: 'novoCliente', component: CriarClienteComponent },
   { path: 'listaClientes', component: ListarClientesComponent },
   { path: 'novaSala', component: CriarSalaComponent },

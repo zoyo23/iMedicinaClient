@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Sala } from 'src/app/models/sala.model';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-sala',
@@ -17,7 +18,7 @@ export class CriarSalaComponent implements OnInit {
     dataConsulta: new FormControl('')
   });
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,9 +38,16 @@ export class CriarSalaComponent implements OnInit {
     headers.set('Content-Type', 'application/json; charset=utf-8');
 
     console.log(modeloSala);
-
+    delete modeloSala.Id;
+    delete modeloSala.ChaveSalaCliente;
+    delete modeloSala.ChaveSalaMedico;
+    delete modeloSala.IdentificadorSala;
+    console.log(modeloSala);
     this.httpClient.post(`${environment.url_base_api}/api/Salas`, modeloSala, { headers: headers })
-      .subscribe(res => console.log(res));
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigate(['/listaSalas']);
+      });
   }
 
 }
