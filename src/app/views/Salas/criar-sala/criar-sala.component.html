@@ -1,1 +1,22 @@
-<p>criar-sala works!</p>
+<div class="container">
+    <h1>Nova Sala</h1>
+    <form [formGroup]="salaConferenciaForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Id do CLiente</label>
+            <input type="text" formControlName="idCliente" class="form-control" id="idCliente" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">Id do Médico</label>
+            <input type="text" formControlName="idMedico" class="form-control" id="idMedico">
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">Data da Consulta</label>
+            <input type="datetime" formControlName="dataConsulta" class="form-control" id="dataConsulta">
+        </div>
+
+        <button type="submit" class="btn btn-success">Gravar</button>
+
+    </form>
+</div>
