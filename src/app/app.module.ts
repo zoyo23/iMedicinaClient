@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SalasComponent } from './salas/salas.component';
-import { MedicosComponent } from './medicos/medicos.component';
-import { ClientesComponent } from './clientes/clientes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CriarClienteComponent } from './Clientes/criar-cliente/criar-cliente.component';
+import { CriarSalaComponent } from './Salas/criar-sala/criar-sala.component';
+import { ListarClientesComponent } from './Clientes/listar-clientes/listar-clientes.component';
+import { ListarSalasComponent } from './Salas/listar-salas/listar-salas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SalasComponent,
-    MedicosComponent,
-    ClientesComponent
+    CriarClienteComponent,
+    CriarSalaComponent,
+    ListarClientesComponent,
+    ListarSalasComponent,
   ],
   imports: [
     BrowserModule,
