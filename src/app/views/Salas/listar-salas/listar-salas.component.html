@@ -3,8 +3,13 @@
 
 <a href="novaSala">Criar Nova Sala</a>
 
+<div *ngIf="carregado | async">
 
-<li *ngFor="let Sala of listaSalas; index as i; first as isFirst">
-    <b> Posição:</b> {{i}} <b>IdCliente:</b> {{Sala.IdCliente}} <b>IdMedico:</b> {{Sala.IdMedico}} <b>DataConsulta:</b> {{Sala.DataConsulta}} <b>Id:</b> {{Sala.Id}} <b>ChaveSalaCliente:</b> {{Sala.ChaveSalaCliente}} <b>ChaveSalaMedico:</b> {{Sala.ChaveSalaMedico}} <b>IdentificadorSala:</b> {{Sala.IdentificadorSala}} 
-    <a href="teleconferencia">Entrar na Sala</a>
-</li>
+    <li *ngFor="let sala of listaSalas; index as i; first as isFirst">
+        <b> Posição:</b> {{i}} <b>IdCliente:</b> {{sala.idCliente}} <b>IdMedico:</b> {{sala.idMedico}}
+        <b>DataConsulta:</b>
+        {{sala.dataConsulta}} <b>Id:</b> {{sala.id}} <b>ChaveSalaCliente:</b> {{sala.chaveSalaCliente}}
+        <b>ChaveSalaMedico:</b> {{sala.chaveSalaMedico}} <b>IdentificadorSala:</b> {{sala.identificadorSala}}
+        <button [routerLink]="['/teleconferencia', sala.identificadorSala]">Entrar na Sala</button>
+    </li>
+</div>

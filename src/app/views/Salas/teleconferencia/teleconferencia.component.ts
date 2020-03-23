@@ -1,6 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import 'src/vendor/jitsi/external_api.js';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 declare var JitsiMeetExternalAPI: any;
 
@@ -15,14 +16,19 @@ export class TeleconferenciaComponent implements OnInit {
   options: any;
   api: any;
 
-  constructor() { }
+  @Input() ChaveSala: string;
+
+  constructor(private _Activatedroute: ActivatedRoute) {
+    this.ChaveSala = this._Activatedroute.snapshot.paramMap.get("id");
+    console.log(this.ChaveSala);
+  }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
     this.options = {
-      roomName: "3fa85f6457174562b3fc2c963f66afa6",
+      roomName: this.ChaveSala === null ? "start_room" : this.ChaveSala,
       width: 700,
       height: 700,
       parentNode: document.querySelector('#meet')

@@ -6,7 +6,6 @@ export class Sala {
         public Id: string,
         public ChaveSalaCliente: string,
         public ChaveSalaMedico: string,
-        public IdentificadorSala: string,
-
+        public IdentificadorSala: string
     ) { }
 }

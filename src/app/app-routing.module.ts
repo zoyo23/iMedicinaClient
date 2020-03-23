@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'listaClientes', component: ListarClientesComponent },
   { path: 'novaSala', component: CriarSalaComponent },
   { path: 'listaSalas', component: ListarSalasComponent },
-  { path: 'teleconferencia', component: TeleconferenciaComponent },
+  { path: 'teleconferencia/:id', component: TeleconferenciaComponent },
 ];
 
 @NgModule({
